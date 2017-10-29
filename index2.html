@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div  id="main">
+	
+</div>
+
+<script type="text/javascript">
+     //  add flag div
+    var array=document.createDocumentFragment();
+	var main=document.getElementById("main");
+	 for(i=1;i<=3;i++){
+         var div=document.createElement("div");
+         array.appendChild(div);
+     }
+     var div= document.getElementsByTagName("div");
+	 main.appendChild(array);
+     div[1].style.border="1px solid silver";
+     div[1].style.height="100px";
+     div[2].style.border="1px solid silver";
+     div[2].style.height="100px";
+     div[3].style.border="1px solid silver";
+     div[3].style.height="100px";
+
+    // add country name
+    var array_text=document.createDocumentFragment();
+    for(j=1;j<=3;j++){
+        var span=document.createElement("span");
+        array_text.appendChild(span);
+    }
+    var span= document.getElementsByTagName("span");
+    main.appendChild(array_text);
+
+    span[0].innerText="Az"
+    span[1].innerText="Ru"
+    span[2].innerText="Tr"
+
+    span[0].style.padding="10px";
+    span[1].style.padding="10px";
+    span[2].style.padding="10px";
+
+    // events list
+    span[0].addEventListener("click",azflag);
+    span[1].addEventListener("click",ruflag);
+    span[2].addEventListener("click",trflag);
+
+
+    // function for events
+    
+            // function for aze
+            function azflag(){
+                div[1].style.background="blue";
+                div[2].style.background="red";
+                div[3].style.background="green";
+
+            }
+
+            // function for ru
+            function ruflag(){
+                div[1].style.background="white";
+                div[2].style.background="red";
+                div[3].style.background="blue";
+
+            }
+            // function for tr
+            function trflag(){
+                div[1].style.background="red";
+                div[2].style.background="red";
+                div[3].style.background="red";
+
+            }
+</script>
+</body>
+</html>

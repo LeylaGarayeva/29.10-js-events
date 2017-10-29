@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div  id="main">
+	
+</div>
+
+<script type="text/javascript">
+	var header = document.createElement("div");
+	var content=document.createElement("div");
+	var footer=document.createElement("div");
+	var main=document.getElementById("main");
+	main.appendChild(header);
+	main.appendChild(content);
+	main.appendChild(footer);
+	// header.style.background="blue";
+	header.style.height="100px";
+    header.style.border="1px solid silver";
+	// content.style.background="red";
+	content.style.height="100px";
+     content.style.border="1px solid silver";
+	// footer.style.background="green";
+	footer.style.height="100px";
+    footer.style.border="1px solid silver";
+	
+
+    var az=document.createElement("span");
+    var ru=document.createElement("span");
+    var tr=document.createElement("span");
+
+    main.appendChild(az);
+    main.appendChild(ru);
+    main.appendChild(tr);
+
+    az.innerText="az";
+    ru.innerText="ru";
+    tr.innerText="tr";
+    az.style.padding="10px";
+    ru.style.padding="10px";
+    tr.style.padding="10px";
+
+    az.addEventListener("click" ,azflag);
+   
+    ru.addEventListener("click" ,ruflag);
+    tr.addEventListener("click" ,trflag);
+
+    function azflag(){
+         header.style.background="blue";
+         content.style.background="red";
+         footer.style.background="green";
+         content.addEventListener("mouseover" ,azflag2);
+         content.addEventListener("mouseout" ,azflag3);
+    }
+
+    function azflag2(){
+         content.innerText="Azerbaycan";
+    }
+      function azflag3(){
+         content.innerText="";
+    }
+     function ruflag(){
+         header.style.background="white";
+         content.style.background="red";
+         footer.style.background="blue";
+         content.addEventListener("mouseover" ,ruflag2);
+         content.addEventListener("mouseout" ,ruflag3);
+    }
+       function ruflag2(){
+         content.innerText="Rusiya";
+    }
+      function ruflag3(){
+         content.innerText="";
+    }
+    function trflag(){
+         header.style.background="red";
+         content.style.background="red";
+         footer.style.background="red";
+         content.addEventListener("mouseover" ,trflag2);
+         content.addEventListener("mouseout" ,trflag3);
+    }
+
+     function trflag2(){
+         content.innerText="Turkiye";
+    }
+      function trflag3(){
+         content.innerText="";
+    }
+</script>
+</body>
+</html>

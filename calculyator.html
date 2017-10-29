@@ -1,0 +1,184 @@
+<html>  
+    <head></head>
+    <body>
+        <div class="main" style="width: 256px;    background: aqua;padding: 5px; height: 138px;">
+            <div id="display" style="background: darkslategrey;height: 30px;color:white;text-align: right;padding: 5px;"></div>
+        </div>    
+    </body>
+    <script>
+        
+        var array=document.createDocumentFragment();
+        var holder=0;
+        var operator='';
+        for ( var i=1;i<=16;i++){
+            var blok = document.createElement("div");
+            blok.classList.add("botton");
+            blok.style.height="20px";
+            blok.style.width="60px";
+            blok.style.background="grey";
+            blok.style.float="left";
+            blok.style.margin="2px";
+            blok.style.fontWeight="bold";
+            blok.style.textAlign="center";
+        //    blok.innerHTML=i;
+            array.appendChild(blok);
+        }
+            var main = document.getElementsByClassName("main");
+            main[0].appendChild(array);
+            var bottons = document.getElementsByClassName("botton");
+            bottons[0].innerText="7";
+            bottons[1].innerText="8";
+            bottons[2].innerText="9";
+            bottons[4].innerText="4";
+            bottons[3].innerText="/";
+            bottons[5].innerText="5";
+            bottons[6].innerText="6";
+            bottons[8].innerText="1";
+            bottons[9].innerText="2";
+            bottons[10].innerText="3";
+            bottons[12].innerText="0";
+            bottons[7].innerText="*";
+            bottons[11].innerText="-";
+            bottons[15].innerText="=";
+            bottons[15].style.background="orange";
+            bottons[14].innerText="+";
+            bottons[13].innerText="C";
+
+
+        var display = document.getElementById("display");
+        bottons[0].addEventListener("click",displayClick);
+
+        function displayClick(){
+            display.innerText=display.innerText+'7';
+             
+        }
+
+            bottons[2].addEventListener("click",displayClick8);
+
+              function displayClick8(){
+            display.innerText=display.innerText+'9';
+             
+        }
+
+
+            bottons[5].addEventListener("click",displayClick10);
+
+              function displayClick10(){
+            display.innerText=display.innerText+'5';
+             
+        }
+               bottons[4].addEventListener("click",displayClick9);
+
+                    function displayClick9(){
+                    display.innerText=display.innerText+'4';
+             
+        }
+
+
+            bottons[6].addEventListener("click",displayClick11);
+
+              function displayClick11(){
+            display.innerText=display.innerText+'6';
+             
+        }
+
+
+            bottons[8].addEventListener("click",displayClick12);
+
+              function displayClick12(){
+            display.innerText=display.innerText+'1';
+             
+        }
+               bottons[9].addEventListener("click",displayClick13);
+
+              function displayClick13(){
+            display.innerText=display.innerText+'2';
+             
+        }
+
+               bottons[10].addEventListener("click",displayClick14);
+
+              function displayClick14(){
+            display.innerText=display.innerText+'3';
+             
+        }
+                   bottons[12].addEventListener("click",displayClick15);
+
+              function displayClick15(){
+            display.innerText=display.innerText+'0';
+             
+        }
+
+
+           bottons[13].addEventListener("click",displayClick7);
+
+                 function displayClick7(){
+                    display.innerText='';
+             
+        }
+
+         bottons[1].addEventListener("click",displayClick1);
+
+        function displayClick1(){
+            display.innerText=display.innerText+'8';
+        }
+        bottons[14].addEventListener("click",displayClick2);
+
+        function displayClick2(){
+            holder=Number(display.innerText);
+            display.innerText='';
+            operator="+"
+            console.log(holder)
+
+        }
+
+          bottons[11].addEventListener("click",displayClick4);
+
+        function displayClick4(){
+            holder=Number(display.innerText);
+            display.innerText='';
+            operator="-"
+            console.log(holder)
+
+        }
+             bottons[7].addEventListener("click",displayClick5);
+
+                function displayClick5(){
+                    holder=Number(display.innerText);
+                    display.innerText='';
+                    operator="*"
+                    console.log(holder)
+
+        }
+
+             bottons[3].addEventListener("click",displayClick6);
+
+                function displayClick6(){
+                    holder=Number(display.innerText);
+                    display.innerText='';
+                    operator="/"
+                    console.log(holder)
+
+        }
+
+        // for(var j;j<=bottons.length;j++){
+        //     bottons[j];addEventListener("click",operator)
+        // }
+          bottons[15].addEventListener("click",displayClick3);
+
+                  function displayClick3(){
+               console.log(holder)
+               console.log(Number(display.innerText))
+               console.log(operator);
+               switch(operator){
+                   case "+":  display.innerText = holder+Number(display.innerText); break;
+                   case "-":   display.innerText = holder-Number(display.innerText); break;
+                   case "*":   display.innerText = holder*Number(display.innerText); break;
+                   case "/":   display.innerText = holder/Number(display.innerText); break;
+               }
+
+            
+               
+        }
+    </script>
+</html>
